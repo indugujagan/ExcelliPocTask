@@ -32,6 +32,9 @@ class MovieListAdapter(
     override fun onBindViewHolder(holder: MoviesHolder, position: Int) {
 
         holder.recyclerviewMovieBinding.movie = movies[position]
+        Glide.with(holder.recyclerviewMovieBinding.ivMovieIcon.context)
+            .load(movies[position].poster)
+            .into(holder.recyclerviewMovieBinding.ivMovieIcon)
     }
 
     inner class MoviesHolder(val recyclerviewMovieBinding: RowMovieItemBinding) :

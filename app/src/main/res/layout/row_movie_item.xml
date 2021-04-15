@@ -11,30 +11,35 @@
             type="com.example.samplepoc.model.Search" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tool="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tool="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/_10dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <ImageView
             android:id="@+id/iv_movie_icon"
             android:layout_width="72dp"
             android:layout_height="@dimen/_72dp"
+            android:scaleType="matrix"
             android:paddingRight="@dimen/_10dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_movie_desc"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_movie_name" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/tv_movie_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{movie.title}"
+            app:layout_constrainedWidth="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@+id/iv_movie_icon"
+            app:layout_constraintStart_toStartOf="@+id/tv_movie_desc"
             app:layout_constraintTop_toTopOf="parent"
-            tool:text="DeadPool 2" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tool:text="How to Lose Friends Alienate People" />
 
         <View
             android:id="@+id/view_separator"
@@ -45,7 +50,7 @@
             app:layout_constraintLeft_toRightOf="@id/iv_movie_icon"
             app:layout_constraintTop_toBottomOf="@+id/tv_movie_name" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/tv_movie_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

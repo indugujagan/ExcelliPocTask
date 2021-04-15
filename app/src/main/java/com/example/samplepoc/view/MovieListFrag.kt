@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.samplepoc.adapters.MovieListAdapter
 import com.example.samplepoc.databinding.FragMovieListBinding
@@ -38,6 +39,9 @@ class MovieListFrag : BaseFrag(), RecyclerViewClickListener {
     override fun setupUI() {
         setUpBase(context, vm)
 
+        (activity as MainActivity).supportActionBar!!.setDisplayShowTitleEnabled(false)
+        (activity as MainActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
         vm.getMoviesApiCall("Friends", 1)
     }
 
@@ -50,6 +54,12 @@ class MovieListFrag : BaseFrag(), RecyclerViewClickListener {
 
             binding.rvMoviesList.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
+                it.addItemDecoration(
+                    DividerItemDecoration(
+                        context,
+                        LinearLayoutManager.VERTICAL
+                    )
+                )
                 it.setHasFixedSize(true)
                 it.adapter =
                     MovieListAdapter(
