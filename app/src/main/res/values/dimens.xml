@@ -5,4 +5,5 @@
     <dimen name="_2dp">2dp</dimen>
     <dimen name="_200dp">200dp</dimen>
     <dimen name="_72dp">72dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
 </resources>
