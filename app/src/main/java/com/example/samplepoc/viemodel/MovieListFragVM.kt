@@ -13,14 +13,17 @@ class MovieListFragVM : BaseVM() {
     val movieListResponse = MutableLiveData<MovieListResponse>()
     fun getMoviesApiCall(movieTitle: String, page: Int) {
         setShowProgress(true)
-        val call = ApiEngine.apiInterface.getMovies(ApiConstants.API_KEY,movieTitle,page)
+        val call = ApiEngine.apiInterface.getMovies(ApiConstants.API_KEY, movieTitle, page)
         call.enqueue(object : Callback<MovieListResponse> {
             override fun onFailure(call: Call<MovieListResponse>, t: Throwable) {
                 setShowProgress(false)
                 showDialog(t)
             }
 
-            override fun onResponse(call: Call<MovieListResponse>, response: Response<MovieListResponse>) {
+            override fun onResponse(
+                call: Call<MovieListResponse>,
+                response: Response<MovieListResponse>
+            ) {
                 setShowProgress(false)
                 movieListResponse.value = response.body()
             }

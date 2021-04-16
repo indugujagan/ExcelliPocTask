@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.samplepoc.R
 import com.example.samplepoc.adapters.MovieListAdapter
 import com.example.samplepoc.databinding.FragMovieListBinding
 import com.example.samplepoc.interfaces.RecyclerViewClickListener
@@ -71,6 +73,10 @@ class MovieListFrag : BaseFrag(), RecyclerViewClickListener {
         })
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar!!.show()
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -78,7 +84,8 @@ class MovieListFrag : BaseFrag(), RecyclerViewClickListener {
     }
 
     override fun onRecyclerViewItemClick(view: View, movieItem: Search) {
+        val args = Bundle()
+        args.putString("IMDB_ID", movieItem.imdbID)
+        findNavController().navigate(R.id.action_moviesFragment_to_movieDetailFragment, args)
     }
-
-
 }
