@@ -3,6 +3,10 @@ package com.example.samplepoc.util
 import android.util.Log
 import com.example.samplepoc.BuildConfig
 
+/**
+ *Custom logger class where we can disable logs if the build is release version
+ * Only in debug versions logs will be displayed
+ */
 class Logger {
 
     companion object {

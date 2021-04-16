@@ -13,6 +13,11 @@ enum class ConnectionType {
     Wifi, Cellular
 }
 
+/**
+ * This Class is implemented with Broadcast reciever whenever connectivity change happens pop-up will display
+ * Eg - No internet / Connected to WiFi / Connected to Cellular Network
+ * @param context of activity/Fragment
+ */
 class NetworkMonitorUtil(context: Context) {
 
     private var mContext = context

@@ -11,6 +11,12 @@ import retrofit2.Response
 class MovieDetailFragVM : BaseVM() {
 
     val movieDetailsResponse = MutableLiveData<MovieDetailResponse>()
+
+    /**
+     * we get complete movie details in this function
+     *After the API call by using live data we updating the response in UI
+     * @param imdbId - each movie has unique imdbid to get complete movie details
+     */
     fun getMovieDetailsApiCall(imdbId: String?) {
         setShowProgress(true)
         val call = ApiEngine.apiInterface.getMovieDetails(imdbId, ApiConstants.API_KEY)

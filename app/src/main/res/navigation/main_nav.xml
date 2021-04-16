@@ -13,9 +13,6 @@
         <action
             android:id="@+id/action_moviesFragment_to_movieDetailFragment"
             app:destination="@id/movieDetailFragment" />
-        <argument
-            android:name="IMDbID"
-            app:argType="string" />
     </fragment>
 
     <fragment
