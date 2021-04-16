@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="matrix"/>
+
+        <TextView
+            android:id="@+id/tv_rate_movie"
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/purple_curved_rectangle"
+            android:gravity="center"
+            android:text="@string/rate_movie"
+            android:layout_margin="@dimen/_20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20dp"
+            android:background="@drawable/purple_curved_rectangle"
+            android:src="@drawable/ic_baseline_share_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_rate_movie"
+            app:layout_constraintRight_toLeftOf="@+id/iv_bookmark" />
+
+        <ImageView
+            android:id="@+id/iv_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/purple_curved_rectangle"
+            android:src="@drawable/ic_baseline_bookmark_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/_20dp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_imdb_rating"
+            app:layout_constraintLeft_toRightOf="@+id/iv_share"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_movie_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:padding="@dimen/_20dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_movie_desc"
+            app:layout_constraintEnd_toStartOf="@+id/tv_imdb_rating"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tool:text="DeadPool 2" />
+
+        <TextView
+            android:id="@+id/tv_imdb_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:padding="@dimen/_20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_movie_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tool:text="7.6/10" />
+
+        <TextView
+            android:id="@+id/tv_movie_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_20dp"
+            android:layout_margin="@dimen/_20dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_movie_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_rate_movie"
+            app:layout_constraintEnd_toStartOf="@+id/tv_imdb_rating"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tool:text="@string/dummy_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
