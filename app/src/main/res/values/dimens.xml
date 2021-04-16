@@ -3,7 +3,8 @@
     <dimen name="_48dp">48dp</dimen>
     <dimen name="_10dp">10dp</dimen>
     <dimen name="_2dp">2dp</dimen>
-    <dimen name="_200dp">200dp</dimen>
     <dimen name="_72dp">72dp</dimen>
     <dimen name="_20dp">20dp</dimen>
+    <dimen name="_0dp">0dp</dimen>
+    <dimen name="_200dp">200dp</dimen>
 </resources>
